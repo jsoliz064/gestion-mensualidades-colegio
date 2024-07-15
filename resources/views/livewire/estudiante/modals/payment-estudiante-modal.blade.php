@@ -48,8 +48,7 @@
 
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" wire:click="cancelar()">Cancelar</button>
-                            <button type="button" class="btn btn-primary" wire:click="update()">Actualizar</button>
+                            <button type="button" class="btn btn-secondary" wire:click="cancelar()">Cerrar</button>
                         </div>
                     </div>
                 </div>
