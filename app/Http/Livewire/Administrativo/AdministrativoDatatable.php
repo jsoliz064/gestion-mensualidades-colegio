@@ -41,7 +41,7 @@ class AdministrativoDatatable extends DataTableComponent
                 ->searchable(),
             Column::make("Usuario")
                 ->label(
-                    fn ($row, Column $column) => $row->user->email
+                    fn ($row, Column $column) => $row->user?$row->user->email:"sin usuario"
                 )
                 ->sortable()
                 ->searchable(),

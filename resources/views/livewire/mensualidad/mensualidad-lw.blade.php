@@ -111,7 +111,13 @@
                                     <td>{{ $pago->total }} BOB</td>
                                     <td>{{ $pago->User->name }}</td>
                                     <td>{{ $pago->Estudiante->nombre }}</td>
-                                    <td>{{ $pago->Tutor->nombre }}</td>
+                                    <td>
+                                        @if ($pago->Tutor)
+                                            {{ $pago->Tutor->nombre }}
+                                        @else
+                                            ninguno
+                                        @endif
+                                    </td>
                                     <td>{{ $pago->created_at }}</td>
                                     <td>
                                         <a class="btn btn-info btn-sm"

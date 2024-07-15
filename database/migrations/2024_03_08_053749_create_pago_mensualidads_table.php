@@ -26,8 +26,8 @@ class CreatePagoMensualidadsTable extends Migration
             $table->unsignedBigInteger('estudiante_id');
             $table->foreign('estudiante_id')->references('id')->on('estudiantes')->onDelete('cascade')->onUpdate('cascade');
 
-            $table->unsignedBigInteger('tutor_id');
-            $table->foreign('tutor_id')->references('id')->on('tutores')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('tutor_id')->nullable();
+            $table->foreign('tutor_id')->references('id')->on('tutores')->onDelete('set null')->onUpdate('cascade');
 
             $table->timestamps();
         });

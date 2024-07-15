@@ -30,7 +30,7 @@ class CreateAdministrativoModal extends Component
         $this->validate([
             'administrativo.nombre' => 'required|string|max:255',
             'administrativo.ci' => 'required|string|max:255',
-            'administrativo.ci_ex' => 'required|string|max:2',
+            'administrativo.ci_ex' => 'required|string',
             'administrativo.fecha_nac' => 'required|date',
         ]);
 

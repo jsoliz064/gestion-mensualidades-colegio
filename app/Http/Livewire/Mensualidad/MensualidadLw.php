@@ -86,7 +86,7 @@ class MensualidadLw extends Component
     {
         $pago = PagoMensualidad::find($id);
         $detalles = $pago->Detalles;
-        $this->payment['estudiante'] = $pago->Estudiante->nombre . " ". $pago->Estudiante->apellidos;
+        $this->payment['estudiante'] = $pago->Estudiante->nombre . " " . $pago->Estudiante->apellidos;
         $this->payment['tutor'] = $pago->Tutor->nombre;
         $this->payment['subtotal'] = $pago->subtotal;
         $this->payment['descuento'] = $pago->descuento;
@@ -98,7 +98,7 @@ class MensualidadLw extends Component
                 'mes' => $detalle->mes,
                 'subtotal' => $detalle->subtotal,
             ]);
-            $index+=1;
+            $index += 1;
         }
         $this->modalShowPayment = true;
     }
@@ -140,7 +140,7 @@ class MensualidadLw extends Component
     {
         $this->validate([
             'payment.estudiante_id' => 'required|numeric',
-            'payment.tutor_id' => 'required|numeric',
+            'payment.tutor_id' => 'nullable|numeric',
             'payment.subtotal' => 'required|numeric|min:1',
             'payment.descuento' => 'required|numeric|min:0',
         ]);
@@ -157,7 +157,7 @@ class MensualidadLw extends Component
                 'descuento' => $this->payment['descuento'],
                 'total' => $this->payment['subtotal'] - $this->payment['descuento'],
                 'estudiante_id' => $this->payment['estudiante_id'],
-                'tutor_id' => $this->payment['tutor_id'],
+                'tutor_id' => isset($this->payment['tutor_id']) ? $this->payment['tutor_id'] : null,
                 'user_id' => $user->id
             ]);
             foreach ($this->detalles as $detalle) {
