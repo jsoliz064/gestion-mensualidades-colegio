@@ -153,11 +153,11 @@ class MensualidadLw extends Component
         $user = Auth()->user();
         DB::Transaction(function () use ($user) {
             $pago = PagoMensualidad::create([
-                'subtotal' => $this->pago['subtotal'],
-                'descuento' => $this->pago['descuento'],
-                'total' => $this->pago['subtotal'] - $this->pago['descuento'],
-                'estudiante_id' => $this->pago['estudiante_id'],
-                'tutor_id' => $this->pago['tutor_id'],
+                'subtotal' => $this->payment['subtotal'],
+                'descuento' => $this->payment['descuento'],
+                'total' => $this->payment['subtotal'] - $this->payment['descuento'],
+                'estudiante_id' => $this->payment['estudiante_id'],
+                'tutor_id' => $this->payment['tutor_id'],
                 'user_id' => $user->id
             ]);
             foreach ($this->detalles as $detalle) {
