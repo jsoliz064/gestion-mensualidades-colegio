@@ -95,7 +95,6 @@
                                 <th scope="col">Total</th>
                                 <th scope="col">Registrado por</th>
                                 <th scope="col">Estudiante</th>
-                                <th scope="col">Tutor</th>
                                 <th scope="col">Fecha de Pago</th>
                                 <th scope="col">Acciones</th>
                             </tr>
@@ -111,13 +110,6 @@
                                     <td>{{ $pago->total }} BOB</td>
                                     <td>{{ $pago->User->name }}</td>
                                     <td>{{ $pago->Estudiante->nombre }}</td>
-                                    <td>
-                                        @if ($pago->Tutor)
-                                            {{ $pago->Tutor->nombre }}
-                                        @else
-                                            ninguno
-                                        @endif
-                                    </td>
                                     <td>{{ $pago->created_at }}</td>
                                     <td>
                                         <a class="btn btn-info btn-sm"
@@ -173,7 +165,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-12">
+                                {{-- <div class="col-12">
                                     <label for="">Tutor:</label>
                                     <select wire:model="payment.tutor_id" class="form-control">
                                         <option value="">Seleccione un tutor</option>
@@ -184,7 +176,7 @@
                                     @error('payment.tutor_id')
                                         <small class="text-danger">Campo requerido</small>
                                     @enderror
-                                </div>
+                                </div> --}}
 
                                 <div class="col-12 my-4">
                                     <h5>Agregar detalle:</h5>
@@ -363,10 +355,10 @@
                                     </div>
                                 </div>
 
-                                <div class="col-12">
+                                {{-- <div class="col-12">
                                     <label for="">Tutor</label>
                                     <input type="text" value="{{$payment['tutor']}}" readonly="true" class="form-control">
-                                </div>
+                                </div> --}}
 
                                 <div class="col-12 my-2">
                                     <h5>Detalles:</h5>
