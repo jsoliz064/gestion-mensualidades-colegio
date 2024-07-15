@@ -28,9 +28,11 @@
                             </select>
                         </label>
                         <label>
-                            <button wire:click="modalPay()" class="btn btn-success">
-                                Pagar
-                            </button>
+                            @can('pagos.create')
+                                <button wire:click="modalPay()" class="btn btn-success">
+                                    Pagar
+                                </button>
+                            @endcan
                         </label>
                     </div>
                 </div>
@@ -152,7 +154,8 @@
                                 <div class="col-12">
                                     <div class="form-group" wire:ignore>
                                         <label for="">Estudiante</label>
-                                        <select wire:model="payment.estudiante_id" class="form-control" id="estudiantes">
+                                        <select wire:model="payment.estudiante_id" class="form-control"
+                                            id="estudiantes">
                                             <option value="">Seleccione un estudiante</option>
                                             @foreach ($estudiantes as $estudiante)
                                                 <option value="{{ $estudiante->id }}">
@@ -286,10 +289,11 @@
                                             <div class="col-md-3">
                                                 <label for="">Total</label>
                                                 <input type="number" placeholder="total" readonly="true"
-                                                    value="{{ $payment['subtotal'] - $payment['descuento'] }}" class="form-control">
+                                                    value="{{ $payment['subtotal'] - $payment['descuento'] }}"
+                                                    class="form-control">
                                             </div>
                                         </div>
-                                        
+
                                         <div class="card-body d-flex justify-content-center">
                                             <h5 class="card-title font-weight-bold">
                                                 {{ $payment['subtotal'] - $payment['descuento'] }} BOB.</h5>
@@ -351,7 +355,8 @@
                                 <div class="col-12">
                                     <div class="form-group" wire:ignore>
                                         <label for="">Estudiante</label>
-                                        <input type="text" value="{{$payment['estudiante']}}" readonly="true" class="form-control">
+                                        <input type="text" value="{{ $payment['estudiante'] }}" readonly="true"
+                                            class="form-control">
                                     </div>
                                 </div>
 
