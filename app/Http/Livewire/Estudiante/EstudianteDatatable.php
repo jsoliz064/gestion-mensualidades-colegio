@@ -69,6 +69,11 @@ class EstudianteDatatable extends DataTableComponent
         $this->emit('openDestroyEstudianteModal', $estudianteId);
     }
 
+    public function payment($estudianteId)
+    {
+        $this->emit('openPaymentEstudianteModal', $estudianteId);
+    }
+
     public function updateEstudianteTable()
     {
         $this->builder();

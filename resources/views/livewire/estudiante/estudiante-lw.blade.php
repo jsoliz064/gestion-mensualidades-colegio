@@ -7,6 +7,7 @@
         @livewire('estudiante.modals.create-estudiante-modal')
         @livewire('estudiante.modals.edit-estudiante-modal')
         @livewire('estudiante.modals.destroy-estudiante-modal')
+        @livewire('estudiante.modals.payment-estudiante-modal')
     </div>
     <div class="card">
         <div class="card-body">

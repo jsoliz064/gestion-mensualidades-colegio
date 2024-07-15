@@ -7,7 +7,7 @@
 
                         <div class="card-header">
                             <div class="d-flex align-items-center text-center justify-content-center">
-                                <h5>¿Estás seguro de eliminar el operador?</h5>
+                                <h5>¿Estás seguro de eliminar el estudiante?</h5>
                             </div>
                         </div>
 

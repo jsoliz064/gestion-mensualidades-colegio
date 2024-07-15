@@ -10,6 +10,7 @@
             @can('estudiantes.edit')
                 <a class="dropdown-item" href="#" wire:click="edit({{ $row->id }})">Ver o Editar</a>
             @endcan
+            <a class="dropdown-item" href="#" wire:click="payment({{ $row->id }})">Ver pagos</a>
             @can('estudiantes.delete')
                 <a class="dropdown-item" href="#" wire:click="destroy({{ $row->id }})">Eliminar</a>
             @endcan
