@@ -50,5 +50,7 @@ class RolSeeder extends Seeder
         Permission::firstOrCreate(['name' => 'cursos.index'])->syncRoles([$role1, $role2, $role3]);
 
         Permission::firstOrCreate(['name' => 'pagos.index'])->syncRoles([$role1, $role2, $role3]);
+        Permission::firstOrCreate(['name' => 'pagos.create'])->syncRoles([$role1, $role2, $role3]);
+        Permission::firstOrCreate(['name' => 'pagos.show'])->syncRoles([$role1, $role2, $role3]);
     }
 }

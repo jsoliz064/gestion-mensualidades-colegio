@@ -87,7 +87,7 @@ class MensualidadLw extends Component
         $pago = PagoMensualidad::find($id);
         $detalles = $pago->Detalles;
         $this->payment['estudiante'] = $pago->Estudiante->nombre . " " . $pago->Estudiante->apellidos;
-        $this->payment['tutor'] = $pago->Tutor->nombre;
+        $this->payment['tutor'] = $pago->Tutor ? $pago->Tutor->nombre : "";
         $this->payment['subtotal'] = $pago->subtotal;
         $this->payment['descuento'] = $pago->descuento;
         $index = 1;
