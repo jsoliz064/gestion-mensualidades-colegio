@@ -1,11 +1,9 @@
 <?php
 
-use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\AdministrativoController;
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\EstudianteController;
-use App\Http\Controllers\ProduccionController;
-use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
@@ -29,7 +27,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     Route::group(['prefix' => 'users'], function () {
         Route::get('/', [userController::class, 'users'])->name('users.index');
