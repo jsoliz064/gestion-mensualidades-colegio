@@ -60,13 +60,13 @@ class MensualidadLw extends Component
     {
         if ($this->datein == null || $this->dateout == null) {
             $pagos = PagoMensualidad::orderBy('created_at', $this->ordenar)
-                ->paginate($this->cant);
+                ->simplePaginate($this->cant);
         } else {
             $fi = $this->datein . ' 00:00:00';
             $ff = $this->dateout . ' 23:59:59';
             $pagos = PagoMensualidad::whereBetween('created_at', [$fi, $ff])
                 ->orderBy('created_at', $this->ordenar)
-                ->paginate($this->cant);
+                ->simplePaginate($this->cant);
         }
         $tutores = Tutor::all();
         if (isset($this->payment['estudiante_id'])) {

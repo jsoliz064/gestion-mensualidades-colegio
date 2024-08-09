@@ -1,15 +1,15 @@
 @extends('adminlte::page')
 
-@section('title', 'Administrativos')
+@section('title', 'Reportes')
 
 @section('content_header')
-    <div class="row d-flex justify-content-between">
-        <h1>MENSUALIDADES </h1>
+    <div class="row d-flex justify-content-center">
+        <h1>Reportes</h1>
     </div>
 @stop
 
 @section('content')
-    @livewire('mensualidad.mensualidad-lw')
+    @livewire('reporte.reporte-lw')
 @stop
 
 @section('css')

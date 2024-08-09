@@ -318,6 +318,11 @@ return [
             'icon' => 'fas fa-money-bill-wave',
         ],
         [
+            'text' => 'REPORTES',
+            'route'  => 'reportes.index',
+            'icon' => 'fas fa-money-bill-wave',
+        ],
+        [
             'text' => 'USUARIOS',
             'route'  => 'users.index',
             'icon' => 'fas fa-fw fa-users',

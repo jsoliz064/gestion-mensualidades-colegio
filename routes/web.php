@@ -4,6 +4,7 @@ use App\Http\Controllers\AdministrativoController;
 use App\Http\Controllers\CursoController;
 use App\Http\Controllers\EstudianteController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ReporteController;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
@@ -27,14 +28,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    
+
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     Route::group(['prefix' => 'users'], function () {
         Route::get('/', [userController::class, 'users'])->name('users.index');
         Route::get('user/profile/', [userController::class, 'show2'])->name('user.show');
         Route::patch('user/update/', [userController::class, 'update2'])->name('user.update');
-        
     });
 
     Route::group(['prefix' => 'roles'], function () {
@@ -54,5 +54,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     Route::group(['prefix' => 'cursos'], function () {
         Route::get('/', [CursoController::class, 'index'])->name('cursos.index');
+    });
+
+    Route::group(['prefix' => 'reportes'], function () {
+        Route::get('/', [ReporteController::class, 'index'])->name('reportes.index');
     });
 });
